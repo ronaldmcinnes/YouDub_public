@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouDube</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      width: 300px;
+      padding: 30px;
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+      background-color: #040404;
+      color: #f07b27; /* Orange text */
+      border: 5px solid #0ca4eb; /* Blue border */
+      box-sizing: border-box; 
+    }
+    h1 {
+      margin-top: 0;
+    }
+    #logo {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 50px;
+      height: 50px;
+    }
+    #voiceSelect {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 5px;
+      background-color: #040404;
+      color: #f07b27;
+      border: 1px solid #f07b27;
+    }
+    #toggleExtension {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      accent-color: #f07b27;
+    }
+    #status {
+      margin-top: 15px;
+      font-weight: 700;
+    }
+    label {
+      color: #f07b27;
+    }
+    /* Style the dropdown arrow */
+    #voiceSelect::-ms-expand {
+      color: #0ca4eb;
+    }
+    #voiceSelect option {
+      background-color: #040404;
+    }
+    #toggleExtension input{
+      margin-right: 10px;
+      accent-color: #f07b27;
+      font-weight: 700;
+    }
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+    }
+    .checkbox-container label {
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    /* Optional: Style the checkbox when it's checked */
+    #toggleExtension:checked + label {
+      color: #0ca4eb;
+    }
+    #toggleText.enabling {
+      color: #0ca4eb; /* Blue color for "Enabling..." */
+    }
+    #toggleText.enabled {
+      color: #4CAF50; /* Green color for "Enabled Alt Audio!" */
+    }
+    #youtubeMessage {
+      display: none;
+    }
+    #extensionControls {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <img id="logo" src="icons/logo2.png" alt="YouDub Logo">
+  <h1>YouDub</h1>
+  <div id="youtubeMessage">
+    <p>Looks like you're not on YouTube. Go find a video to dub here:</p>
+    <a href="https://www.youtube.com" target="_blank">YouTube.com</a>
+  </div>
+  <div id="extensionControls">
+    <select id="voiceSelect">
+      <option value="default">Default - Robert</option>
+      <option value="Grandpa Spuds Oxley">Grandpa Spuds Oxley</option>
+      <option value="Boston Bob">Boston Bob</option>
+      <option value="David Martin">David Martin</option>
+      <option value="Mark - Robust">Mark - Robust</option>
+      <option value="Ana - British">Ana - British</option>
+      <option value="Ayesha - Energetic">Ayesha - Energetic</option>
+      <option value="Farshid - Turkish">Farshid - Turkish</option>
+      <option value="Mademoiselle">Mademoiselle</option>
+      <option value="vNiraj - Hindi">Niraj - Hindi</option>
+      <option value="Donny - NY">Donny - NY</option>
+    </select>
+    <br>
+    <div class="checkbox-container">
+      <input type="checkbox" id="toggleExtension">
+      <label for="toggleExtension">
+        <span id="toggleText">Enable Alternative Audio</span>
+      </label>
+    </div>
+    <div id="status"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
